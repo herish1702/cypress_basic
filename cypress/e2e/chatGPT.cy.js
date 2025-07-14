@@ -28,7 +28,7 @@ describe("ChatGPT Tasks", ()=> {
     //     })
     // })
 
-    beforeEach(() => {
+    it("Task-4",() => {
         cy.session("loginSession", () => {
             cy.request('POST', 'https://reqres.in/api/login', {
                 "email": "eve.holt@reqres.in",
@@ -41,4 +41,9 @@ describe("ChatGPT Tasks", ()=> {
         
     })
 
+    it("Task - 5", () => {
+        cy.visit("https://example.cypress.io/commands/querying")
+        cy.xpath("//button[@id='query-btn']").click()
+        cy.xpath("//button[@id='query-btn']").isDisplayed()
+    })
 })
